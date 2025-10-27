@@ -175,7 +175,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [ThePrimeagen](https://github.com/ThePrimeagen) for inspiration and best practices
+- [ThePrimeagen](https://github.com/ThePrimeagen) & [TJ DeVries](https://github.com/tjdevries) for inspiration and best practices
 - [Neovim](https://neovim.io/) team for the amazing editor
 - Plugin authors for their excellent work
 
@@ -183,6 +183,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues:
 
-1. Check the [Issues](https://github.com/nishujangra/neovim-config/issues) page
+1. Check the [Issues](https://github.com/nishujangra/nvim-config/issues) page
 2. Create a new issue with detailed information
 3. Include your Neovim version and OS details
