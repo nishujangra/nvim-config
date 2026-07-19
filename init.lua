@@ -1,3 +1,3 @@
 require("nishujangra27")
 
-print("🚀 Neovim configuration loaded successfully!")
+print("nishujangra27's neovim config loaded successfully")
