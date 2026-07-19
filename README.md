@@ -1,89 +1,81 @@
-# 🚀 Nishant's Neovim Configuration
+# Nishant's Neovim Configuration
 
-A modern, modular Neovim configuration optimized for productivity and development efficiency. Built with Lua and designed for maintainability.
+A modular Neovim configuration written in Lua.
 
-## ✨ Features
+## Features
 
-- **🔍 Telescope** - Fuzzy finder for files, live grep, and more
-- **🎯 Harpoon** - Lightning-fast file navigation and project management
-- **🌳 Treesitter** - Advanced syntax highlighting and code parsing
-- **🎨 Rose Pine** - Beautiful, modern color scheme with transparency support
-- **📝 Fugitive** - Git integration and workflow
-- **⏪ Undotree** - Visual undo history management
-- **⌨️ Smart Keybindings** - Intuitive mappings for enhanced productivity
-- **🦀 Rust Development** - Comprehensive Rust tooling and keymaps
+- Telescope - fuzzy finder for files and live grep
+- Harpoon - fast file navigation
+- Treesitter - syntax highlighting and code parsing
+- Rose Pine - color scheme with transparency support
+- Fugitive - Git integration
+- Undotree - visual undo history
+- Rust tooling and keymaps
 
-## 🛠️ Prerequisites
+## Prerequisites
 
-- **Neovim 0.8+** (recommended: latest stable)
-- **Git** for plugin management
-- **Node.js** (for Treesitter and LSP)
-- **ripgrep** (for Telescope live grep)
-- **fd** (for better file finding)
+- Neovim 0.8+
+- Git
+- Node.js
+- ripgrep
+- fd
 
-### Installation Commands
+### Install dependencies
 
 ```bash
 # Ubuntu/Debian
 sudo apt update
 sudo apt install neovim git nodejs npm ripgrep fd-find
 
-# macOS (with Homebrew)
+# macOS (Homebrew)
 brew install neovim git node ripgrep fd
 
 # Arch Linux
 sudo pacman -S neovim git nodejs npm ripgrep fd
 ```
 
-## 🚀 Quick Start
+## Setup
 
-### 1. Backup Your Existing Config
+1. Back up your existing config:
 
 ```bash
-# Backup current config (if exists)
 mv ~/.config/nvim ~/.config/nvim.backup
 ```
 
-### 2. Clone This Repository
+2. Clone this repository:
 
 ```bash
 git clone https://github.com/nishujangra/neovim-config.git ~/.config/nvim
 cd ~/.config/nvim
 ```
 
-### 3. Install Dependencies
+3. Install Packer:
 
 ```bash
-# Install Packer (plugin manager)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-### 4. Launch Neovim and Install Plugins
+4. Launch Neovim and install plugins:
 
 ```bash
 nvim .
 ```
 
-Once inside Neovim, run:
-```
-:PackerSync
-```
+Inside Neovim, run `:PackerSync`, wait for the plugins to install, then restart.
 
-Wait for all plugins to install, then restart Neovim.
-
-## 📁 Configuration Structure
+## Structure
 
 ```
 nvim/
 ├── init.lua                 # Entry point
 ├── lua/
 │   └── nishujangra27/
-│       ├── init.lua        # Main configuration loader
-│       ├── packer.lua      # Plugin definitions
-│       ├── remap.lua       # Key mappings
-│       └── set.lua         # Vim options
-└── after/plugin/           # Plugin-specific configurations
+│       ├── init.lua         # Config loader
+│       ├── packer.lua       # Plugin definitions
+│       ├── remap.lua        # Key mappings
+│       └── set.lua          # Vim options
+└── after/plugin/            # Plugin-specific config
     ├── colors.lua
     ├── fugitive.lua
     ├── harpoon.lua
@@ -92,97 +84,92 @@ nvim/
     └── undotree.lua
 ```
 
-## ⌨️ Key Mappings
+## Key Mappings
 
-### Leader Key
-- **Leader**: `<Space>` (modern standard)
+Leader key: `<Space>`
 
 ### Navigation
-- `<leader>ff` - Find files with Telescope
+
+- `<leader>ff` - Find files (Telescope)
 - `<C-g>` - Find git files
 - `<leader>fs` - Live grep
 - `<leader>back` - Open file explorer
 - `<C-e>` - Toggle Harpoon menu
-- `<C-h>`, `<C-t>`, `<C-n>`, `<C-s>` - Navigate to Harpoon marks
+- `<C-h>`, `<C-t>`, `<C-n>`, `<C-s>` - Jump to Harpoon marks
 
-### Git Integration
-- `<leader>gs` - Open Git status (Fugitive)
+### Git
 
-### File Management
+- `<leader>gs` - Git status (Fugitive)
+
+### Files
+
 - `<leader>u` - Toggle Undotree
 - `<leader>x` - Make file executable
 - `<leader>s` - Search and replace current word
 
-### Rust Development
-- `<leader>rr` - Run Rust code
-- `<leader>rd` - Debug Rust code
+### Rust
+
+- `<leader>rr` - Run
+- `<leader>rd` - Debug
 - `<leader>rh` - Hover actions
 - `<leader>rc` - Code actions
-- `<leader>rf` - Format code
+- `<leader>rf` - Format
 - `<leader>rt` - Run tests
-- `<leader>rb` - Build project
+- `<leader>rb` - Build
 
-### Quality of Life
-- `J` - Join lines with cursor positioning
-- `<C-d>/<C-u>` - Half page down/up with center
-- `n/N` - Search with center positioning
+### Quality of life
+
+- `J` - Join lines, keep cursor position
+- `<C-d>` / `<C-u>` - Half page down/up, centered
+- `n` / `N` - Search, centered
 - `<leader>p` - Paste without yanking (visual mode)
 - `<leader>d` - Delete without yanking
 - `<C-c>` - Escape in insert mode
 
-## 🎨 Customization
+## Customization
 
-### Color Scheme
-The configuration uses Rose Pine with transparency. To change:
+### Color scheme
 
-1. Edit `lua/nishujangra27/packer.lua`
-2. Replace the colorscheme section
+Uses Rose Pine with transparency. To change it, edit `lua/nishujangra27/packer.lua`, replace the colorscheme section, and run `:PackerSync`.
+
+### Adding plugins
+
+1. Add the plugin to `lua/nishujangra27/packer.lua`
+2. Add its config in `after/plugin/`
 3. Run `:PackerSync`
 
-### Adding Plugins
-1. Add to `lua/nishujangra27/packer.lua`
-2. Create configuration in `after/plugin/`
-3. Run `:PackerSync`
+### Keymaps
 
-### Modifying Keymaps
-Edit `lua/nishujangra27/remap.lua` to customize keybindings.
+Edit `lua/nishujangra27/remap.lua`.
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-### Plugin Installation Issues
+### Plugin installation
+
 ```bash
-# Clean and reinstall
 rm -rf ~/.local/share/nvim
 nvim +PackerSync
 ```
 
-### Performance Issues
-- Check for large files (Treesitter disables for files > 1MB)
-- Ensure you have sufficient RAM
-- Consider disabling unused plugins
+### Performance
 
-## 🤝 Contributing
+- Treesitter disables for files over 1MB
+- Disable unused plugins if needed
+
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/name`
+3. Commit your changes: `git commit -m 'Add feature'`
+4. Push: `git push origin feature/name`
+5. Open a pull request
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT - see [LICENSE](LICENSE).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- [ThePrimeagen](https://github.com/ThePrimeagen) & [TJ DeVries](https://github.com/tjdevries) for inspiration and best practices
-- [Neovim](https://neovim.io/) team for the amazing editor
-- Plugin authors for their excellent work
-
-## 📞 Support
-
-If you encounter any issues:
-
-1. Check the [Issues](https://github.com/nishujangra/nvim-config/issues) page
-2. Create a new issue with detailed information
-3. Include your Neovim version and OS details
+- [ThePrimeagen](https://github.com/ThePrimeagen) and [TJ DeVries](https://github.com/tjdevries) for inspiration
+- The [Neovim](https://neovim.io/) team
+- Plugin authors
