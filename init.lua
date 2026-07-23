@@ -1,3 +1,5 @@
-require("nishujangra27")
+-- Written by Nishant ndjangra1027@gmail.com nishujangra.dev
 
-print("nishujangra27's neovim config loaded successfully")
+require("nishujangra.set")
+require("nishujangra.remap")
+require("config.lazy")
