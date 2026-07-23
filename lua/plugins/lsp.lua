@@ -31,7 +31,6 @@ return {
             local ok, blink = pcall(require, "blink.cmp")
             if ok then caps = blink.get_lsp_capabilities(caps) end
 
-            local lsp = require("lspconfig")
             local servers = {
                 gopls = {
                     settings = { gopls = {
@@ -50,9 +49,12 @@ return {
                 -- rust_analyzer intentionally omitted: handled by rustaceanvim (Phase G)
             }
           
+            -- Neovim 0.11+ API: register config, then enable the server.
+            vim.lsp.config("*", { capabilities = caps })
             for name, opts in pairs(servers) do
                 opts.capabilities = caps
-                lsp[name].setup(opts)
+                vim.lsp.config(name, opts)
+                vim.lsp.enable(name)
             end
 
             -- buffer-local keymaps on attach

@@ -2,6 +2,7 @@
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",   -- pin: the `main` branch dropped the .configs.setup() API
     build = ":TSUpdate",
     lazy = false,
     config = function()
