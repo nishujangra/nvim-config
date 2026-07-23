@@ -77,7 +77,7 @@ your **subscription login** — no API keys required.
 2. Clone this repository:
 
    ```bash
-   git clone https://github.com/nishujangra/neovim-config.git ~/.config/nvim
+   git clone https://github.com/nishujangra/nvim-config.git ~/.config/nvim
    ```
 
 3. Launch Neovim:
