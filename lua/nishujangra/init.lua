@@ -2,4 +2,3 @@
 
 require("nishujangra.set")
 require("nishujangra.remap")
-require("config.lazy")
