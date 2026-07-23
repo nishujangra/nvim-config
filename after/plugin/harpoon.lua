@@ -17,5 +17,5 @@ vim.keymap.set("n", "<C-n>", function ()
 end)
 
 vim.keymap.set("n", "<C-s>", function ()
-    ui.nav_file(1) 
+    ui.nav_file(4)
 end)
