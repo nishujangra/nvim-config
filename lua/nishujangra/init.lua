@@ -1,8 +1,4 @@
-require("nishujangra27.remap")
+-- Written by Nishant ndjangra1027@gmail.com nishujangra.dev
 
-require("nishujangra27.packer")
-
-require("nishujangra27.set")
-
-
-print("hello from the side of Nishant")
+require("nishujangra.set")
+require("nishujangra.remap")
