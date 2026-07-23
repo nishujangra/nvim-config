@@ -1,3 +1,6 @@
+-- Written by Nishant ndjangra1027@gmail.com nishujangra.dev
+
+
 -- change the leader from default '\' to ' '
 vim.g.mapleader = " "
 
@@ -17,12 +20,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "=ap", "ma=ap'a")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -71,10 +68,6 @@ vim.keymap.set(
     "<leader>el",
     "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
 )
-
-vim.keymap.set("n", "<leader>ca", function()
-    require("cellular-automaton").start_animation("make_it_rain")
-end)
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
