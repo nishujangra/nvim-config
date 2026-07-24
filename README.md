@@ -103,6 +103,7 @@ your **subscription login** — no API keys required.
 ```
 nvim/
 ├── init.lua                    # Entry point (loads options, remaps, lazy)
+├── .clang-format               # C/C++ indent style (4 spaces, no tabs)
 ├── lua/
 │   ├── config/
 │   │   └── lazy.lua            # lazy.nvim bootstrap + setup
@@ -229,6 +230,22 @@ Uses **Rose Pine (moon)** with transparency. To change the variant, edit the
 Add a server name to `ensure_installed` in
 [`lua/plugins/lsp.lua`](lua/plugins/lsp.lua) and configure it in the `servers`
 table. Run `:Mason` to manage server binaries interactively.
+
+### C/C++ formatting
+
+C and C++ indentation is controlled by [`.clang-format`](.clang-format), not by
+the editor's `tabstop`/`shiftwidth` — both `clang-format` (format-on-save) and
+`clangd` (live indent) read it. This repo ships a 4-space, no-tabs style. To make
+it your global default:
+
+```bash
+cp .clang-format ~/.clang-format
+```
+
+Or drop a `.clang-format` in any project root to override the style per-project.
+
+> Go is intentionally different: it uses hard tabs (enforced by `gofmt`), so `.go`
+> files won't follow the 4-space rule — that's expected, not a bug.
 
 ### Keymaps
 

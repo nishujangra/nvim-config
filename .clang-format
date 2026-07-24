@@ -1,0 +1,9 @@
+# C/C++ formatting — 4-space indentation, no hard tabs.
+# Read by both clang-format (format-on-save via conform.nvim) and clangd.
+# Copy to ~/.clang-format for a global default, or drop in a project root to override.
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
