@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.opt.clipboard = "unnamedplus" -- yanking goes to system clipboard
+
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
