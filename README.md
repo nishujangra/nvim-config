@@ -24,7 +24,7 @@ formatting, and AI (Claude Code + Codex) integration — tuned for Rust, Go, and
 
 ## Prerequisites
 
-- Neovim **0.9+** (0.10+ recommended)
+- Neovim **0.11+**
 - Git, Node.js + npm, ripgrep, fd
 - A [Nerd Font](https://www.nerdfonts.com/) (for lualine/devicons)
 
@@ -256,12 +256,6 @@ nvim   # lazy re-bootstraps and reinstalls
 
 - Treesitter highlighting auto-disables for files over 1 MB.
 - `:Lazy profile` — inspect plugin load times.
-
-## Documentation
-
-- [`enhancement.md`](enhancement.md) — the full audit and improvement plan
-- [`dev/development.md`](dev/development.md) — step-by-step build guide with
-  exact file contents for every phase
 
 ## Contributing
 
